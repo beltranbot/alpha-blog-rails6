@@ -18,6 +18,9 @@ rails new . --force --database=postgresql
 
 # run rails server
 rails server -b 0.0.0.0 
+rails server -b 0.0.0.0 -e development
+# -b bind
+# -e environment
 
 # update docker-compose.yml to setup correct volume mapping for postgres
 
