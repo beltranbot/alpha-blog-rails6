@@ -1,30 +1,24 @@
-# build rails image
-docker build -t rails6 ./docker/rails6
+# README
 
-# run rails container
-docker run -t -d -v $(pwd):/myapp --name rails6 -p 3000:3000 rails6
-docker run -t -d -v $(pwd):/myapp -v "$(pwd)/bundle":/usr/local/bundle --name rails6 -p 3000:3000 rails6
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-docker cp 6c972692fa13:/usr/local/bundle ./bundle
+Things you may want to cover:
 
-# connect to container
-docker exec -ti rails6 bash
+* Ruby version
 
-# create new rails project
-rails new <project-name>
-# to create in current folder, --force to replace already existing files
-rails new .
-rails new . --force --database=postgresql
+* System dependencies
 
-# run rails server
-rails server -b 0.0.0.0 
-rails server -b 0.0.0.0 -e development
-# -b bind
-# -e environment
+* Configuration
 
-# update docker-compose.yml to setup correct volume mapping for postgres
+* Database creation
 
-docker exec -ti rails6-docker_web_1 bash
+* Database initialization
 
-# create database
-rake db:create
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
